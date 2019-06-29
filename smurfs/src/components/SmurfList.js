@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchSmurfs } from '../store/actions';
+import {
+  deleteSmurf,
+  fetchSmurfs
+} from '../store/actions';
 
 import { Smurf } from './Smurf';
 
 class SmurfList extends Component {
+  handleClick = (e, id) => {
+    const DELETE = 'DELETE';
+
+    switch (e.target.name) {
+      case DELETE:
+        return this.props.deleteSmurf(id);
+      default:
+        return;
+    }
+  };
+
   componentDidMount() {
     this.props.fetchSmurfs();
   }
@@ -18,6 +32,7 @@ class SmurfList extends Component {
         {this.props.smurfs.map(smurf =>
           <Smurf
             key={smurf.id}
+            onClick={e => this.handleClick(e, smurf.id)}
             {...smurf}
           />
         )}
@@ -33,5 +48,5 @@ const mapState = state => ({
 
 export default connect(
   mapState,
-  { fetchSmurfs }
+  { deleteSmurf, fetchSmurfs }
 )(SmurfList);

@@ -44,9 +44,10 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="smurfForm" onSubmit={this.handleSubmit}>
         <input
           autoFocus
+          className="big"
           name="name"
           onChange={this.handleChange}
           placeholder="name"
@@ -54,6 +55,7 @@ class SmurfForm extends Component {
           value={this.state.smurf.name}
         />
         <input
+          className="small"
           name="age"
           onChange={this.handleChange}
           placeholder="age"
@@ -61,6 +63,7 @@ class SmurfForm extends Component {
           value={this.state.smurf.age}
         />
         <input
+          className="small"
           name="height"
           onChange={this.handleChange}
           placeholder="height"
@@ -68,7 +71,7 @@ class SmurfForm extends Component {
           value={this.state.smurf.height}
         />
         <button type="submit">
-          add
+          ＋
         </button>
         {this.props.error && this.renderError(this.props.error)}
       </form>

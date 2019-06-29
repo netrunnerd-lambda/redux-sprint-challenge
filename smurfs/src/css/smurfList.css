@@ -1,0 +1,37 @@
+.smurfList {
+  color: dodgerblue;
+  line-height: 2.5rem;
+  margin: auto;
+  max-width: 750px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.smurf {
+  background: dodgerblue;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  margin: 2.5rem auto;
+  padding: 0.5rem;
+  max-width: 50%;
+}
+
+.smurfActs {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+}
+
+.smurfActs button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: color 0.25s;
+}
+
+.smurfActs button:hover {
+  color: lightblue;
+}
