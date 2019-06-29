@@ -34,12 +34,23 @@ export default function (state = initialState, action) {
         fetchingSmurfs: false
       };
     case SMURF_ADD_START:
-      return state;
+      return {
+        ...state,
+        addingSmurf: true
+      };
     case SMURF_ADD_SUCCESS:
-      return state;
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      };
     case SMURF_ADD_FAILURE:
-      return state;
+      return {
+        ...state,
+        addingSmurf: false,
+        error: action.payload
+      };
     default:
       return state;
   }
-};
+}

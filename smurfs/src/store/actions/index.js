@@ -26,4 +26,15 @@ export const fetchSmurfs = _ => dispatch => {
 };
 
 export const addSmurf = s => dispatch => {
+  dispatch({ type: SMURF_ADD_START });
+
+  return axios.post(endpoint, s) 
+              .then(({ data }) => dispatch({
+                type: SMURF_ADD_SUCCESS,
+                payload: data
+              }))
+              .catch(err => dispatch({
+                type: SMURF_ADD_FAILURE,
+                payload: err.response.data.error
+              }));
 };
