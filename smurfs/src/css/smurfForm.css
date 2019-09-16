@@ -1,0 +1,41 @@
+.smurfForm {
+  align-items: center;
+  background: dodgerblue;
+  border-bottom: 5px solid white;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+}
+
+.smurfForm button,
+.smurfForm input {
+  background: white;
+  border: none;
+  color: dodgerblue;
+}
+
+.smurfForm button {
+  border-radius: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  height: 30px;
+  transition: background 0.5s;
+  width: 30px;
+}
+
+.smurfForm button:hover {
+  background: whitesmoke;
+}
+
+.smurfForm input {
+  padding: 0.5rem;
+}
+
+.smurfForm input.big {
+  width: 70%;
+}
+
+.smurfForm input.small {
+  width: 8%;
+}
